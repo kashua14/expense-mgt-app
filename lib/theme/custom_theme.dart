@@ -107,12 +107,12 @@ class CustomTheme {
     headline6: GoogleFonts.urbanist(
       fontSize: 20,
       color: Colors.white,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.normal,
     ),
     headline5: GoogleFonts.urbanist(
       fontSize: 24,
       color: Colors.white,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.normal,
     ),
     headline4: GoogleFonts.urbanist(
       fontSize: 28,

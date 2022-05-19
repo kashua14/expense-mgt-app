@@ -11,7 +11,7 @@ class CustomColors {
   static Color get blackDark => const Color(0xFF12141D);
   static Color get blackLight => const Color(0xFF21262B);
   static Color get darkBlue => const Color(0xFF2F333F);
-  static Color get red => const Color(0xFFF30707);
+  static Color get red => const Color(0xFFF22C2C);
 
   static const Color primaryColor = Color(0xFFDDF247);
   static const Color accentColor = Color(0xFF91A03C);

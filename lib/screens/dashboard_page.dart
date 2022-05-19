@@ -1,8 +1,9 @@
-import 'package:e_kitabo/theme/custom_colors.dart';
-import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/svg_asset_picture.dart';
+import '../model/transaction.dart';
+import '../theme/custom_colors.dart';
+import '../theme/text_theme_x.dart';
+import '../widgets/transaction_details.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -31,9 +32,9 @@ class _DashboardPageState extends State<DashboardPage> {
 
   DraggableScrollableSheet _buildDraggableScrollableSheet() {
     return DraggableScrollableSheet(
-        initialChildSize: 0.35,
-        minChildSize: 0.35,
-        // maxChildSize: 1,
+        initialChildSize: 0.3,
+        minChildSize: 0.3,
+        maxChildSize: 0.7,
         builder: (BuildContext cxt, ScrollController scrollController) {
           return Container(
             decoration: BoxDecoration(
@@ -44,12 +45,35 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             child: Scrollbar(
-              child: ListView.builder(
-                itemCount: 40,
-                controller: scrollController,
-                itemBuilder: (BuildContext context, int index) => ListTile(
-                  title: Text("Item $index"),
-                ),
+              // thumbVisibility: false,
+              child: Container(
+                padding:
+                    const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
+                child: ListView.builder(
+                    itemCount: Transaction.transactions.length,
+                    controller: scrollController,
+                    itemBuilder: (_, int index) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          index == 0
+                              ? Container(
+                                  margin: const EdgeInsets.only(bottom: 10),
+                                  child: Text("Latest Transactions",
+                                      style: context.headline4),
+                                )
+                              : const SizedBox(
+                                  height: 5,
+                                ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          TransactionDetails(
+                            transaction: Transaction.transactions[index],
+                          )
+                        ],
+                      );
+                    }),
               ),
             ),
           );
