@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../model/transaction.dart';
+import '../model/chart_dart.dart';
 import '../theme/custom_colors.dart';
 import '../theme/text_theme_x.dart';
-import '../widgets/transaction_details.dart';
+import '../widgets/custom_draggable_sheet.dart';
+import '../widgets/custom_legend.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -13,6 +15,18 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+  late ZoomPanBehavior _zoomPanBehavior;
+
+  @override
+  void initState() {
+    _zoomPanBehavior = ZoomPanBehavior(
+      enablePinching: true,
+      enableMouseWheelZooming: true,
+      enableDoubleTapZooming: true,
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -22,62 +36,63 @@ class _DashboardPageState extends State<DashboardPage> {
           child: Column(
             children: [
               _header(context),
+              SfCartesianChart(
+                zoomPanBehavior: _zoomPanBehavior,
+                legend: Legend(
+                    isVisible: true,
+                    // alignment: ChartAlignment.far,
+                    position: LegendPosition.bottom,
+                    legendItemBuilder: (String name, dynamic series,
+                        dynamic point, int index) {
+                      return CustomLegend(name: name, index: index);
+                    }),
+                plotAreaBorderColor: Colors.transparent,
+                primaryXAxis: CategoryAxis(
+                  interval: 2,
+                  majorGridLines: const MajorGridLines(width: 0),
+                  majorTickLines: const MajorTickLines(size: 0),
+                ),
+                primaryYAxis: NumericAxis(
+                  // labelFormat: '{value}M',
+                  isVisible: false,
+                  majorGridLines: const MajorGridLines(width: 0),
+                  majorTickLines: const MajorTickLines(size: 0),
+                ),
+                series: <ChartSeries<ChartData, String>>[
+                  LineSeries<ChartData, String>(
+                    // groupName: 'Group A',
+                    name: "Income",
+                    dataSource: ChartData.chartData,
+                    isVisibleInLegend: true,
+                    animationDuration: 3000,
+                    xValueMapper: (ChartData data, _) => data.x,
+                    yValueMapper: (ChartData data, _) => data.y,
+                    pointColorMapper: (ChartData data, _) => Colors.green,
+                    // onCreateRenderer: (ChartSeries<ChartData, String> series) {
+                    //   return CustomColumnSeriesRenderer();
+                    // // },
+                    width: 0.8,
+                  ),
+                  LineSeries<ChartData, String>(
+                    // groupName: 'Group B',
+                    name: "Expenses",
+                    animationDuration: 3000,
+                    animationDelay: 500,
+                    dataSource: ChartData.chartData,
+                    isVisibleInLegend: true,
+                    xValueMapper: (ChartData data, _) => data.x,
+                    yValueMapper: (ChartData data, _) => data.y2,
+                    pointColorMapper: (ChartData data, _) => CustomColors.red,
+                    width: 0.8,
+                  ),
+                ],
+              )
             ],
           ),
         ),
-        _buildDraggableScrollableSheet(),
+        const CustomDraggableSheet(),
       ],
     );
-  }
-
-  DraggableScrollableSheet _buildDraggableScrollableSheet() {
-    return DraggableScrollableSheet(
-        initialChildSize: 0.3,
-        minChildSize: 0.3,
-        maxChildSize: 0.7,
-        builder: (BuildContext cxt, ScrollController scrollController) {
-          return Container(
-            decoration: BoxDecoration(
-              color: CustomColors.blackLight,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
-              ),
-            ),
-            child: Scrollbar(
-              // thumbVisibility: false,
-              child: Container(
-                padding:
-                    const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
-                child: ListView.builder(
-                    itemCount: Transaction.transactions.length,
-                    controller: scrollController,
-                    itemBuilder: (_, int index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          index == 0
-                              ? Container(
-                                  margin: const EdgeInsets.only(bottom: 10),
-                                  child: Text("Latest Transactions",
-                                      style: context.headline4),
-                                )
-                              : const SizedBox(
-                                  height: 5,
-                                ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          TransactionDetails(
-                            transaction: Transaction.transactions[index],
-                          )
-                        ],
-                      );
-                    }),
-              ),
-            ),
-          );
-        });
   }
 
   Row _summaryReport(BuildContext context, IconData icon, Color backgroundColor,
@@ -149,7 +164,7 @@ class _DashboardPageState extends State<DashboardPage> {
             )
           ],
         ),
-        const SizedBox(height: 30.0),
+        const SizedBox(height: 25.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
