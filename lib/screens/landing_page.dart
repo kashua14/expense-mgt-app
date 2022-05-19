@@ -1,13 +1,8 @@
 import 'package:e_kitabo/screens/dashboard_page.dart';
-import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
 
-import '../components/auth_form_fields.dart';
-import '../components/auth_page_footer.dart';
-import '../components/svg_asset_picture.dart';
-import '../routes/app_routes.dart';
+import '../widgets/svg_asset_picture.dart';
 import '../theme/custom_colors.dart';
-import '../theme/custom_theme.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);

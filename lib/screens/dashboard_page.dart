@@ -1,9 +1,8 @@
 import 'package:e_kitabo/theme/custom_colors.dart';
 import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../components/svg_asset_picture.dart';
+import '../widgets/svg_asset_picture.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);

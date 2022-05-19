@@ -1,8 +1,8 @@
 import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
 
-import '../components/auth_form_fields.dart';
-import '../components/auth_page_footer.dart';
+import '../widgets/auth_form_fields.dart';
+import '../widgets/auth_page_footer.dart';
 import '../routes/app_routes.dart';
 import '../theme/custom_colors.dart';
 import '../theme/custom_theme.dart';
