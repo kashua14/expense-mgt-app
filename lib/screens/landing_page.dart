@@ -1,5 +1,7 @@
 import 'package:e_kitabo/screens/dashboard_page.dart';
+import 'package:e_kitabo/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../widgets/svg_asset_picture.dart';
 import '../theme/custom_colors.dart';
@@ -30,10 +32,14 @@ class _LandingPageState extends State<LandingPage> {
     ),
   ];
 
-
   @override
   Widget build(BuildContext context) {
-
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: CustomTheme.isDarkModeOn() ? Brightness.light : Brightness.dark ,
+      ),
+    );
     final kBottomNavBarItems = <BottomNavigationBarItem>[
       BottomNavigationBarItem(
         icon: SvgAssetPicture(
@@ -54,7 +60,7 @@ class _LandingPageState extends State<LandingPage> {
           assetName: "assets/icons/add.svg",
           color: _currentTabIndex == 2
               ? CustomColors.primaryColor
-              : CustomColors.grayMedium,
+              : CustomColors.grayDark,
         ),
         label: "",
       ),
@@ -82,7 +88,11 @@ class _LandingPageState extends State<LandingPage> {
         elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        backgroundColor: _currentTabIndex ==0 ? CustomColors.blackLight : null,
+        backgroundColor: _currentTabIndex == 0
+            ? CustomTheme.isDarkModeOn()
+                ? CustomColors.blackLight
+                : CustomColors.grayMedium
+            : null,
         type: BottomNavigationBarType.fixed,
         onTap: (int index) {
           setState(() {
@@ -93,4 +103,3 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 }
-

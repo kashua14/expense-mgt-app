@@ -6,7 +6,8 @@ import 'transaction_details.dart';
 
 class TransactionList extends StatelessWidget {
   const TransactionList({
-    Key? key, required this.controller,
+    Key? key,
+    required this.controller,
   }) : super(key: key);
 
   final ScrollController controller;
@@ -25,8 +26,10 @@ class TransactionList extends StatelessWidget {
                 index == 0
                     ? Container(
                         margin: const EdgeInsets.only(bottom: 10),
-                        child: Text("Latest Transactions",
-                            style: context.headline4),
+                        child: Text(
+                          "Latest Transactions",
+                          style: context.headline4,
+                        ),
                       )
                     : const SizedBox(
                         height: 5,

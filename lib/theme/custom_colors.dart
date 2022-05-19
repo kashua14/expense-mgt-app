@@ -13,8 +13,8 @@ class CustomColors {
   static Color get darkBlue => const Color(0xFF2F333F);
   static Color get red => const Color(0xFFF22C2C);
 
-  static const Color primaryColor = Color(0xFFDDF247);
-  static const Color accentColor = Color(0xFF91A03C);
+  static const Color primaryColor = Color(0xFF1AE4FE);
+  static const Color accentColor = Color(0xFF38E1F6);
   static const Color grayMedium = Color(0xFFE6E6E6);
   static const Color grayDark = Color(0xFF555C64);
 

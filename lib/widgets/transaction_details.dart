@@ -31,7 +31,7 @@ class TransactionDetails extends StatelessWidget {
             Text(
               transaction.wallet,
               style: context.bodyText1
-                  ?.copyWith(fontSize: 20, color: CustomColors.grayDark),
+                  ?.copyWith( color: CustomColors.grayDark),
             )
           ],
         ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../model/chart_dart.dart';
 import '../theme/custom_colors.dart';
+import '../theme/custom_theme.dart';
 import '../theme/text_theme_x.dart';
 import '../widgets/custom_draggable_sheet.dart';
 import '../widgets/custom_legend.dart';
@@ -29,6 +31,12 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: CustomTheme.isDarkModeOn() ? Brightness.light : Brightness.dark ,
+      ),
+    );
     return Stack(
       children: [
         Padding(
@@ -115,13 +123,11 @@ class _DashboardPageState extends State<DashboardPage> {
           children: [
             Text(
               "Total $reportType",
-              style: context.subtitle1
-                  ?.copyWith(fontSize: 18, color: CustomColors.grayDark),
+              style: context.subtitle1?.copyWith(fontSize: 18, color: CustomColors.grayDark),
             ),
             Text(
               "UGX $amount",
-              style:
-                  context.subtitle1?.copyWith(color: CustomColors.grayMedium),
+              style: context.subtitle1,
             )
           ],
         ),

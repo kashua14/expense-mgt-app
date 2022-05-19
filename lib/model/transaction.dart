@@ -40,7 +40,7 @@ class Transaction {
     ),Transaction(
       id: 4,
       name: "Paid Back",
-      wallet: " Bank Account",
+      wallet: "Bank Account",
       amount: 4500.00,
       date: "26.08.2021",
       time: "07:45 pm",

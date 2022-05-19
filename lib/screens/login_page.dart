@@ -1,5 +1,6 @@
 import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../widgets/auth_form_fields.dart';
 import '../widgets/auth_page_footer.dart';
@@ -17,6 +18,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: CustomTheme.isDarkModeOn() ? Brightness.light : Brightness.dark ,
+      ),
+    );
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),

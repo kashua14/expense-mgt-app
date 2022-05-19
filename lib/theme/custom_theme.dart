@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'custom_colors.dart';
@@ -149,7 +150,7 @@ class CustomTheme {
       appBarTheme: AppBarTheme(
         elevation: 0,
         // backgroundColor: Colors.white,
-        centerTitle: true,
+        centerTitle: true, systemOverlayStyle: SystemUiOverlayStyle.dark,
         iconTheme: const IconThemeData(color: CustomColors.grayDark),
         titleTextStyle: GoogleFonts.urbanist(
           color: Colors.black,
@@ -181,6 +182,7 @@ class CustomTheme {
       appBarTheme: AppBarTheme(
         elevation: 0,
         backgroundColor: CustomColors.blackDark,
+        systemOverlayStyle: SystemUiOverlayStyle.light,
         centerTitle: true,
         iconTheme: const IconThemeData(color: CustomColors.accentColor),
         titleTextStyle: GoogleFonts.urbanist(

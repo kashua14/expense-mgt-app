@@ -1,3 +1,4 @@
+import 'package:e_kitabo/theme/custom_theme.dart';
 import 'package:e_kitabo/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class CustomDraggableSheet extends StatelessWidget {
         builder: (_, ScrollController scrollController) {
           return Container(
             decoration: BoxDecoration(
-              color: CustomColors.blackLight,
+              color: CustomTheme.isDarkModeOn() ? CustomColors.blackLight : CustomColors.grayMedium,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(40),
                 topRight: Radius.circular(40),

@@ -1,5 +1,6 @@
 import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../widgets/auth_form_fields.dart';
 import '../widgets/auth_page_footer.dart';
@@ -12,6 +13,12 @@ class SignupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: CustomTheme.isDarkModeOn() ? Brightness.light : Brightness.dark ,
+      ),
+    );
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20.0),
