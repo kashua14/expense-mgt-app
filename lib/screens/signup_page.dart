@@ -1,3 +1,4 @@
+import 'package:e_kitabo/generated/assets.dart';
 import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -52,8 +53,8 @@ class SignupPage extends StatelessWidget {
                         height: 340,
                         child: Image.asset(
                           CustomTheme.isDarkModeOn()
-                              ? "assets/images/dark-register.gif"
-                              : "assets/images/light-register.gif",
+                              ? Assets.imagesDarkRegister
+                              : Assets.imagesLightRegister,
                           fit: BoxFit.cover,
                         ),
                       ),

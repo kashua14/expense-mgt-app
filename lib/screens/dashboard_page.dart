@@ -1,3 +1,4 @@
+import 'package:e_kitabo/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -171,7 +172,7 @@ class _DashboardPageState extends State<DashboardPage> {
               height: 50,
               width: 50,
               child: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/myPic.png"),
+                backgroundImage: AssetImage(Assets.imagesMyPic),
               ),
             )
           ],

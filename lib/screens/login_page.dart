@@ -1,3 +1,4 @@
+import 'package:e_kitabo/generated/assets.dart';
 import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -58,8 +59,8 @@ class _LoginPageState extends State<LoginPage> {
                         height: 350,
                         child: Image.asset(
                           CustomTheme.isDarkModeOn()
-                              ? "assets/images/dark-financial.gif"
-                              : "assets/images/light-financial.gif",
+                              ? Assets.imagesDarkFinancial
+                              : Assets.imagesLightFinancial,
                           fit: BoxFit.cover,
                         ),
                       ),

@@ -1,3 +1,4 @@
+import 'package:e_kitabo/generated/assets.dart';
 import 'package:e_kitabo/model/wallet.dart';
 import 'package:e_kitabo/utils/enums.dart';
 import 'package:e_kitabo/widgets/wallet_card.dart';
@@ -33,7 +34,7 @@ class WalletPage extends StatelessWidget {
             child: IconButton(
               onPressed: () {},
               icon: SvgAssetPicture(
-                assetName: "assets/icons/add.svg",
+                assetName: Assets.iconsAdd,
                 color: CustomTheme.isDarkModeOn()
                     ? CustomColors.grayMedium
                     : CustomColors.blackDark,

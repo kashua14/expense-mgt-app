@@ -1,9 +1,10 @@
-import 'package:e_kitabo/screens/dashboard_page.dart';
-import 'package:e_kitabo/screens/wallet_page.dart';
 import 'package:e_kitabo/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../generated/assets.dart';
+import 'dashboard_page.dart';
+import 'wallet_page.dart';
 import '../widgets/svg_asset_picture.dart';
 import '../theme/custom_colors.dart';
 
@@ -42,21 +43,21 @@ class _LandingPageState extends State<LandingPage> {
     final kBottomNavBarItems = <BottomNavigationBarItem>[
       BottomNavigationBarItem(
         icon: SvgAssetPicture(
-          assetName: "assets/icons/dashboard.svg",
+          assetName: Assets.iconsDashboard,
           color: _currentTabIndex == 0 ? CustomColors.primaryColor : null,
         ),
         label: "",
       ),
       BottomNavigationBarItem(
         icon: SvgAssetPicture(
-          assetName: "assets/icons/wallet.svg",
+          assetName: Assets.iconsWallet,
           color: _currentTabIndex == 1 ? CustomColors.primaryColor : null,
         ),
         label: "",
       ),
       BottomNavigationBarItem(
         icon: SvgAssetPicture(
-          assetName: "assets/icons/add.svg",
+          assetName: Assets.iconsAdd,
           color: _currentTabIndex == 2
               ? CustomColors.primaryColor
               : CustomColors.grayDark,
@@ -65,14 +66,14 @@ class _LandingPageState extends State<LandingPage> {
       ),
       BottomNavigationBarItem(
         icon: SvgAssetPicture(
-          assetName: "assets/icons/notification.svg",
+          assetName: Assets.iconsNotification,
           color: _currentTabIndex == 3 ? CustomColors.primaryColor : null,
         ),
         label: "",
       ),
       BottomNavigationBarItem(
         icon: SvgAssetPicture(
-          assetName: "assets/icons/profile.svg",
+          assetName:Assets.iconsProfile,
           color: _currentTabIndex == 4 ? CustomColors.primaryColor : null,
         ),
         label: "",
