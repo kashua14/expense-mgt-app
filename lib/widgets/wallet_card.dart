@@ -2,6 +2,7 @@ import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:e_kitabo/utils/enums.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/assets.dart';
 import '../model/wallet.dart';
 import '../theme/custom_colors.dart';
 import '../theme/custom_theme.dart';
@@ -22,16 +23,16 @@ class WalletCard extends StatelessWidget {
     String assetName = "";
     switch (wallet.type) {
       case WalletType.crypto:
-        assetName = "assets/icons/crypto.svg";
+        assetName = Assets.iconsCrypto;
         break;
       case WalletType.mobileMoney:
         assetName = "assets/icons/mobile-money.svg";
         break;
       case WalletType.physicalWallet:
-        assetName = "assets/icons/wallet.svg";
+        assetName = Assets.iconsWallet;
         break;
       default:
-        assetName = "assets/icons/account-logo.svg";
+        assetName = Assets.iconsAccountLogo;
         break;
     }
     bool isNegative = wallet.amount < 10000;

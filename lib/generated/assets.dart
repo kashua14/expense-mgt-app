@@ -9,6 +9,7 @@ class Assets {
   static const String assetsFrustratedFace = 'assets/frustrated-face.png';
   static const String assetsMyErrorImage = 'assets/my-error-image.png';
   static const String iconsAccountLogo = 'assets/icons/account-logo.svg';
+  static const String iconsCrypto = 'assets/icons/crypto.svg';
   static const String iconsAdd = 'assets/icons/add.svg';
   static const String iconsDashboard = 'assets/icons/dashboard.svg';
   static const String iconsGoogle = 'assets/icons/google.svg';
