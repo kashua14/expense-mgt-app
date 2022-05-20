@@ -1,3 +1,4 @@
+import 'package:e_kitabo/theme/text_theme_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -31,111 +32,6 @@ class CustomTheme {
   //       textTheme: lightTextTheme,
   //     );
 
-  static TextTheme lightTextTheme = TextTheme(
-    caption: GoogleFonts.urbanist(
-      color: Colors.grey,
-      fontSize: 12,
-      fontWeight: FontWeight.w400,
-    ),
-    subtitle1: GoogleFonts.urbanist(
-      fontSize: 16,
-      fontWeight: FontWeight.w500,
-    ),
-    subtitle2: GoogleFonts.urbanist(
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-    ),
-    bodyText1: GoogleFonts.urbanist(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-    ),
-    bodyText2: GoogleFonts.urbanist(
-      fontSize: 14,
-      fontWeight: FontWeight.w400,
-    ),
-    headline6: GoogleFonts.urbanist(
-      fontSize: 20,
-      fontWeight: FontWeight.w500,
-    ),
-    headline5: GoogleFonts.urbanist(
-      fontSize: 24,
-      fontWeight: FontWeight.w500,
-    ),
-    headline4: GoogleFonts.urbanist(
-      fontSize: 28,
-      fontWeight: FontWeight.w500,
-    ),
-    headline3: GoogleFonts.urbanist(
-      fontSize: 32,
-      fontWeight: FontWeight.bold,
-    ),
-    headline2: GoogleFonts.urbanist(
-      fontSize: 36,
-      fontWeight: FontWeight.bold,
-    ),
-    headline1: GoogleFonts.urbanist(
-      fontSize: 40,
-      fontWeight: FontWeight.bold,
-    ),
-  );
-
-  static TextTheme darkTextTheme = TextTheme(
-    caption: GoogleFonts.urbanist(
-      color: Colors.grey,
-      fontSize: 12,
-      fontWeight: FontWeight.w400,
-    ),
-    subtitle1: GoogleFonts.urbanist(
-      fontSize: 16,
-      color: Colors.white,
-      fontWeight: FontWeight.w500,
-    ),
-    subtitle2: GoogleFonts.urbanist(
-      fontSize: 16,
-      color: Colors.white,
-      fontWeight: FontWeight.w400,
-    ),
-    bodyText1: GoogleFonts.urbanist(
-      fontSize: 14,
-      color: Colors.white,
-      fontWeight: FontWeight.w500,
-    ),
-    bodyText2: GoogleFonts.urbanist(
-      fontSize: 14,
-      color: Colors.white,
-      fontWeight: FontWeight.w400,
-    ),
-    headline6: GoogleFonts.urbanist(
-      fontSize: 20,
-      color: Colors.white,
-      fontWeight: FontWeight.normal,
-    ),
-    headline5: GoogleFonts.urbanist(
-      fontSize: 24,
-      color: Colors.white,
-      fontWeight: FontWeight.normal,
-    ),
-    headline4: GoogleFonts.urbanist(
-      fontSize: 28,
-      color: Colors.white,
-      fontWeight: FontWeight.w500,
-    ),
-    headline3: GoogleFonts.urbanist(
-      fontSize: 32,
-      color: Colors.white,
-      fontWeight: FontWeight.w500,
-    ),
-    headline2: GoogleFonts.urbanist(
-      fontSize: 36,
-      color: Colors.white,
-      fontWeight: FontWeight.w500,
-    ),
-    headline1: GoogleFonts.urbanist(
-      fontSize: 40,
-      color: Colors.white,
-      fontWeight: FontWeight.w500,
-    ),
-  );
 
   static light() {
     return ThemeData(
@@ -149,21 +45,22 @@ class CustomTheme {
       ),
       appBarTheme: AppBarTheme(
         elevation: 0,
-        // backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         centerTitle: true, systemOverlayStyle: SystemUiOverlayStyle.dark,
-        iconTheme: const IconThemeData(color: CustomColors.grayDark),
-        titleTextStyle: GoogleFonts.urbanist(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.w500,
-        ),
+        iconTheme: const IconThemeData(color: CustomColors.blackDark),
+        titleTextStyle: lightTextTheme.headline4,
       ),
       textSelectionTheme: const TextSelectionThemeData(
           selectionColor: CustomColors.accentColor),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: CustomColors.primaryColor,
       ),
-      iconTheme: const IconThemeData(color: CustomColors.grayDark),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: CustomColors.grayLight,
+        selectedIconTheme:
+            const IconThemeData(color: CustomColors.primaryColor),
+      ),
+      iconTheme: const IconThemeData(color: CustomColors.blackDark),
       scaffoldBackgroundColor: Colors.white,
       textTheme: lightTextTheme,
     );
@@ -185,11 +82,7 @@ class CustomTheme {
         systemOverlayStyle: SystemUiOverlayStyle.light,
         centerTitle: true,
         iconTheme: const IconThemeData(color: CustomColors.accentColor),
-        titleTextStyle: GoogleFonts.urbanist(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w500,
-        ),
+        titleTextStyle: darkTextTheme.headline4,
       ),
       textSelectionTheme: const TextSelectionThemeData(
           selectionColor: CustomColors.accentColor),
@@ -197,7 +90,7 @@ class CustomTheme {
         backgroundColor: CustomColors.primaryColor,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: CustomColors.blackDark,
+        backgroundColor: CustomColors.blackLight,
         selectedIconTheme:
             const IconThemeData(color: CustomColors.primaryColor),
       ),

@@ -21,7 +21,7 @@ class SignupPage extends StatelessWidget {
     );
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: SafeArea(
           child: LayoutBuilder(builder:
               (BuildContext context, BoxConstraints viewportConstraints) {
@@ -49,7 +49,7 @@ class SignupPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 350,
+                        height: 340,
                         child: Image.asset(
                           CustomTheme.isDarkModeOn()
                               ? "assets/images/dark-register.gif"
@@ -67,12 +67,12 @@ class SignupPage extends StatelessWidget {
                       const Expanded(
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.0),
-                          child: AuthFormFields(),
+                          child: AuthFormFields(ctaBtnText: "REGISTER"),
                         ),
                       ),
                       const SizedBox(height: 20),
                       const AuthPageFooter(
-                          btnText: "SIGN IN", route: AppRoutes.kLogin)
+                          btnText: "LOGIN", route: AppRoutes.kLogin)
                     ],
                   ),
                 ),

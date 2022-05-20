@@ -1,4 +1,5 @@
 import 'package:e_kitabo/screens/dashboard_page.dart';
+import 'package:e_kitabo/screens/wallet_page.dart';
 import 'package:e_kitabo/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,9 +19,7 @@ class _LandingPageState extends State<LandingPage> {
 
   final kTabPages = <Widget>[
     const DashboardPage(),
-    const Center(
-      child: Icon(Icons.wallet, size: 64),
-    ),
+    const WalletPage(),
     const Center(
       child: Icon(Icons.add_circle, size: 64),
     ),
@@ -88,11 +87,11 @@ class _LandingPageState extends State<LandingPage> {
         elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        backgroundColor: _currentTabIndex == 0
-            ? CustomTheme.isDarkModeOn()
-                ? CustomColors.blackLight
-                : CustomColors.grayMedium
-            : null,
+        // backgroundColor: _currentTabIndex == 0
+        //     ? CustomTheme.isDarkModeOn()
+        //         ? CustomColors.blackLight
+        //         : CustomColors.grayLight
+        //     : null,
         type: BottomNavigationBarType.fixed,
         onTap: (int index) {
           setState(() {

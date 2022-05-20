@@ -9,8 +9,10 @@ import 'password_field.dart';
 
 class AuthFormFields extends StatefulWidget {
   const AuthFormFields({
-    Key? key,
+    Key? key, required this.ctaBtnText,
   }) : super(key: key);
+
+  final String ctaBtnText;
 
   @override
   State<AuthFormFields> createState() => _AuthFormFieldsState();
@@ -67,7 +69,7 @@ class _AuthFormFieldsState extends State<AuthFormFields> {
                   Navigator.of(context).pushReplacementNamed(AppRoutes.kDashboard);
                 },
                 child: Text(
-                  "LOGIN",
+                  widget.ctaBtnText,
                   style: context.headline6?.copyWith(
                     letterSpacing: 1.5,
                     color: CustomColors.blackLight,

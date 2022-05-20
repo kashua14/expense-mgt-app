@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                       const Expanded(
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.0),
-                          child: AuthFormFields(),
+                          child: AuthFormFields(ctaBtnText: "LOGIN"),
                         ),
                       ),
                       const SizedBox(height: 20),
