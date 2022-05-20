@@ -34,7 +34,8 @@ class _DashboardPageState extends State<DashboardPage> {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: CustomTheme.isDarkModeOn() ? Brightness.light : Brightness.dark ,
+        statusBarIconBrightness:
+            CustomTheme.isDarkModeOn() ? Brightness.light : Brightness.dark,
       ),
     );
     return Stack(
@@ -98,7 +99,11 @@ class _DashboardPageState extends State<DashboardPage> {
             ],
           ),
         ),
-        const CustomDraggableSheet(),
+        const CustomDraggableSheet(
+          initialSize: 0.37,
+          minSize: 0.37,
+          maxSize: 0.7,
+        ),
       ],
     );
   }
@@ -123,7 +128,8 @@ class _DashboardPageState extends State<DashboardPage> {
           children: [
             Text(
               "Total $reportType",
-              style: context.subtitle1?.copyWith(fontSize: 18, color: CustomColors.grayDark),
+              style: context.subtitle1
+                  ?.copyWith(fontSize: 18, color: CustomColors.grayDark),
             ),
             Text(
               "UGX $amount",

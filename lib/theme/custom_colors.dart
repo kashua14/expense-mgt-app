@@ -7,12 +7,12 @@ class CustomColors {
 
   static MaterialAccentColor get accent =>
       primaryColor.toMaterialAccentColor();
-  static Color get grayLight => const Color(0xFFF6F6F6);
-  static Color get blackDark => const Color(0xFF12141D);
   static Color get blackLight => const Color(0xFF21262B);
   static Color get darkBlue => const Color(0xFF2F333F);
   static Color get red => const Color(0xFFF22C2C);
+  static Color get grayLight => const Color(0xFFF6F6F6);
 
+  static const Color blackDark = Color(0xFF12141D);
   static const Color primaryColor = Color(0xFF1AE4FE);
   static const Color accentColor = Color(0xFF38E1F6);
   static const Color grayMedium = Color(0xFFE6E6E6);

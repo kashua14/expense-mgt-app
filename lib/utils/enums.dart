@@ -1,0 +1,1 @@
+enum WalletType { bank, mobileMoney, crypto, physicalWallet }
